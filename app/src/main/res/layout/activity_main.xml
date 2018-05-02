@@ -30,4 +30,10 @@
         android:layout_alignParentTop="true">
     </ListView>
 
-    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/activity_main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
+</RelativeLayout>

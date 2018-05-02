@@ -1,5 +1,6 @@
 package com.adiyehezkeli.selfchatadi;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -24,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//
+//        MessageFragment messageFragment = new MessageFragment();
+//
+//        getSupportFragmentManager()
+//                .beginTransaction()
+//                .add(R.id.activity_main_frame, messageFragment)
+//                .commit();
 
         msgDisplay = findViewById(R.id.the_msg_display);
         sendButton = findViewById(R.id.send_button);
@@ -32,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new MsgAdapter(this, msgArray);
         msgDisplay.setAdapter(adapter);
-
-
-
     }
 
     public void sendMessage(View view)
@@ -46,6 +51,17 @@ public class MainActivity extends AppCompatActivity {
             adapter.addMsg(newMsg);
             input.setText("");
         }
-
     }
+
+
+    //
+//    @Override
+//    public void onClick(MessagePojo message) {
+//        MessageDetailsFragment frag = MessageDetailsFragment.newInstance(message);
+//        getSupportFragmentManager()
+//                .beginTransaction()
+//                .add(R.id.frame, frag)
+//                .addToBackStack(null)
+//                .commit();
+//    }
 }
